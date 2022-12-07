@@ -5,6 +5,7 @@ import {MatDialog,MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import { AddeventsComponent } from '../addevents/addevents.component';
+import {Router} from "@angular/router";
 
 
 
@@ -14,24 +15,30 @@ import { AddeventsComponent } from '../addevents/addevents.component';
   styleUrls: ['./event-crud.component.css']
 })
 export class EventCrudComponent implements OnInit {
+  events: any;
   @Input() event:Event ;
-    
+
   // ['Name','Id', 'Note', 'Asset', 'Date', 'Picture' ,'Descripition']
   displayedColumns: string[] = ['name','id','asset','picture','note','date','descripition','action'];
   dataSource: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  
 
-  constructor(private dialog : MatDialog, private api : EventService) { 
+
+  constructor(private dialog : MatDialog, private api : EventService, private router:Router,
+              private EventService: EventService) {
 
   }
 
-  ngOnInit(): void {
-    this.getAllevents();
-   
-  }
+  ngOnInit() {
+    this.EventService.getAllEvent().subscribe((event ) => {
+      this.events = event;
+      console.log(this.events);
 
+
+    })
+
+  }
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -56,10 +63,10 @@ export class EventCrudComponent implements OnInit {
     })
   }
   getAllevents(){
-   
+
 this.api.getEvent().subscribe({
   next:(res)=> {
-   
+
       this.dataSource = new MatTableDataSource(res);
       this.dataSource.paginator =this.paginator;
       this.dataSource.sort = this.sort
@@ -67,7 +74,7 @@ this.api.getEvent().subscribe({
   error:(err)=>{
     alert("Error while fetching the Records!!")
   }
-  
+
   })
   }
 
@@ -96,4 +103,3 @@ this.api.deleteEvent(id).subscribe({
 
 }
 
- 
