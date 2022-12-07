@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+
+</head>
+<body>
+
+<form action="index.html" method="post" [formGroup]="signForm" (ngSubmit)="signup()" >
+
+  <h1>Sign Up</h1>
+
+  <fieldset>
+    <legend><span class="number">1</span>Your basic info</legend>
+    <label for="name">Name:</label>
+    <input formControlName="name" type="text" id="name" name="user_name">
+    <label for="name">Last Name :</label>
+    <input formControlName="lname" type="text" id="name" name="user_lname">
+
+
+
+    <label for="mail">Email:</label>
+    <input formControlName="email" type="email" id="mail" name="user_email">
+
+    <label for="password">Password:</label>
+    <input formControlName="pass" type="password" id="password" name="user_password">
+    <label for="name">CIN :</label>
+    <input formControlName="cin" type="number" id="name" name="cin">
+    <label for="name">Mobile Number :</label>
+    <input formControlName="tlf" type="number" id="name" name="tlf">
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="number">2</span>Your profile</legend>
+    <label for="bio">Biography:</label>
+    <textarea formControlName="bio" id="bio" name="user_bio"></textarea>
+  </fieldset>
+  <fieldset>
+  <label for="job">Job Role:</label>
+  <select formControlName="role" id="job" name="user_job">
+
+      <option value="tr">Traiteur</option>
+      <option value="se">Serveur</option>
+      <option value="es">Espace</option>
+      <option value="lo"> Locataire</option>
+      <option value="an">Animateur</option>
+      <option value="ph">Photographeur</option>
+
+  </select>
+  </fieldset>
+  <button type="submit">Sign Up</button>
+</form>
+
+</body>
+
+
+

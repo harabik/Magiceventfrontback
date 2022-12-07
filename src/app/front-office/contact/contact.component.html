@@ -1,0 +1,28 @@
+
+
+
+  <section class="contact" id="contact" >
+
+    <h1 class="heading"> <span>contact</span> us </h1>
+
+    <form  (ngSubmit)="onSubmit(k)"  #k="ngForm">
+        <div class="inputBox">
+
+            <input type="text" name="name" placeholder="name" [(ngModel)]="contact.name" #name="ngModel">
+            <input type="email" name="email" placeholder="email" [(ngModel)]="contact.email" #email="ngModel">
+        </div>
+        <div class="inputBox">
+            <input type="number" name="number" placeholder="number" [(ngModel)]="contact.number" #number="ngModel">
+            <input type="text" name="subject" placeholder="subject" [(ngModel)]="contact.subject" #subject="ngModel">
+        </div>
+        <textarea name="your_message" placeholder="your message" id="" cols="30" rows="10" [(ngModel)]="contact.your_message" #your_message="ngModel"></textarea>
+        <!-- <button type="button" class="btn btn-success">Success</button> -->
+
+        <input type="submit" value="send message"  id="submit"    class="btn btn-primary ">
+        <!-- <input type="submit" value="SUBMIT" id="submit" class="btn btn-primary ">  -->
+
+    </form>
+
+</section>
+
+

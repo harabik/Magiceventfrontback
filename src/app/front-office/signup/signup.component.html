@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+
+</head>
+<body>
+
+<form action="index.html" method="post" [formGroup]="signForm" (ngSubmit)="signup()" id="form">
+
+  <h1>Sign Up</h1>
+
+  <fieldset>
+    <legend><span class="number">1</span>Your basic info</legend>
+    <label for="name">Name:</label>
+    <input formControlName="name" type="text" id="name" name="user_name" class="form-control">
+    <span class="text-danger" *ngIf="signForm.controls['name'].dirty && signForm.hasError('required','name')">*Name is required</span>
+
+    <label for="name">Last Name :</label>
+    <input formControlName="lname" type="text" id="name" name="user_lname" class="form-control">
+    <span class="text-danger" *ngIf="signForm.controls['lname'].dirty && signForm.hasError('required','lname')">*Last Name is required</span>
+
+
+
+
+    <label for="mail">Email:</label>
+    <input formControlName="email" type="email" id="mail" name="user_email" class="form-control">
+    <span class="text-danger" *ngIf="signForm.controls['email'].dirty && signForm.hasError('required','email')">*Email is required</span>
+
+    <label for="password">Password:</label>
+    <input formControlName="pass" type="password" id="password" name="user_password" class="form-control">
+    <span class="text-danger" *ngIf="signForm.controls['pass'].dirty && signForm.hasError('required','pass')">*Password is required</span>
+
+
+    <label for="name">Mobile Number :</label>
+    <input formControlName="tlf" type="number" id="name" name="tlf" class="form-control">
+    <span class="text-danger" *ngIf="signForm.controls['tlf'].dirty && signForm.hasError('required','tlf')">*Mobile is required</span>
+
+
+
+  </fieldset>
+
+  <button type="submit" [disabled]="!signForm.valid" class="btn btn-success">Sign Up</button>
+
+</form>
+
+</body>
+
+

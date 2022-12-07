@@ -1,0 +1,33 @@
+
+
+
+<section class="event" id="event">
+
+    <h1 class="heading"> our <span>event</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box" *ngFor="let e of event; let i = index">
+            <h3 class="title">{{event[i].name}}</h3>
+            <h3 class="amount"></h3>
+            <ul>
+                <li><i class="fas fa-check"></i>full services</li>
+                <li> <i class="fas fa-check"></i> decorations </li>
+                <li> <i class="fas fa-check"></i> music and photos </li>
+                <li> <i class="fas fa-check"></i> food and drinks </li>
+                <li> <i class="fas fa-check"></i> invitation card </li>
+            </ul>
+            <!-- <h2 class="picture"> {{event[i].picture}}</h2> -->
+            <img class="picture" src={{event[i].picture}} alt="">
+        </div>
+
+        
+
+    </div>
+
+
+</section>
+
+
+
+
