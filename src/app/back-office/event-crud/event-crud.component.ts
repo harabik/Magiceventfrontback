@@ -30,14 +30,17 @@ export class EventCrudComponent implements OnInit {
 
   }
 
+  getEvents(){
+    this.EventService.getAllEvents().subscribe((event ) => {
+  this.events = event;
+  console.log(this.events);
+
+
+})
+  }
+
   ngOnInit() {
-    this.EventService.getAllEvent().subscribe((event ) => {
-      this.events = event;
-      console.log(this.events);
-
-
-    })
-
+    this.getAllevents();
   }
 
   applyFilter(filterValue: string) {
@@ -62,20 +65,23 @@ export class EventCrudComponent implements OnInit {
       }
     })
   }
-  getAllevents(){
+  getAllevents( ){
 
-this.api.getEvent().subscribe({
-  next:(res)=> {
+this.getEvents() ;
 
-      this.dataSource = new MatTableDataSource(res);
-      this.dataSource.paginator =this.paginator;
-      this.dataSource.sort = this.sort
-  },
-  error:(err)=>{
-    alert("Error while fetching the Records!!")
-  }
+    /*
+    this.api.getEvent().subscribe
+     /* next:(res)=> {
 
-  })
+          this.dataSource = new MatTableDataSource(res);
+          this.dataSource.paginator =this.paginator;
+          this.dataSource.sort = this.sort
+      },
+      error:(err)=>{
+        alert("Error while fetching the Records!!")
+      }
+
+      })*/
   }
 
   deleteEvent(id:number){
