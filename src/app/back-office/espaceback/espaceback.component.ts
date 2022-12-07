@@ -49,3 +49,4 @@ export class EspacebackComponent implements OnInit {
     this.s.deleteespace(d).subscribe(()=>{console.log('succes')})
   }
 }
+//khalil
