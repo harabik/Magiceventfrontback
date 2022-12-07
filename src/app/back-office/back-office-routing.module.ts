@@ -6,6 +6,8 @@ import { BackOfficeComponent } from './back-office.component';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { EspacebackComponent } from './espaceback/espaceback.component';
+import { ServeurbackComponent } from './serveurback/serveurback.component';
 
 
 const routes: Routes = [
@@ -17,6 +19,9 @@ const routes: Routes = [
          { path: 'crudevents',  component: EventCrudComponent },
          { path: 'sidebar',     component: SidebarComponent },
          { path: 'navbar',     component:NavBarComponent },
+         { path: 'espaceback',     component:EspacebackComponent },
+         { path: 'serveurback',     component:ServeurbackComponent },
+
 
 
 

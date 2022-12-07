@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimateurserviceService } from 'src/app/services/animateurservice.service';
 
 @Component({
   selector: 'app-animateur',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimateurComponent implements OnInit {
 
-  constructor() { }
+  constructor( private s:AnimateurserviceService) { }
 
   ngOnInit(): void {
   }
@@ -28,5 +29,12 @@ onSelect(event:any) {
     window.alert('Please select correct image format');
   }
 }
+
+
+ 
+adda(a:any){
+  this.s.adda(a).subscribe(()=>{console.log('succes')})
+}
+
 
 }
