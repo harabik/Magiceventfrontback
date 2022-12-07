@@ -56,9 +56,9 @@ import { DashbordComponent } from './dashbord/dashbord.component';
       NavBarComponent,
       EventsComponent,
       DashbordComponent,
-      
-      
-     
+
+
+
   ],
 
   imports: [

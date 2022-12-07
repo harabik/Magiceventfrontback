@@ -10,7 +10,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 const routes: Routes = [
 
-      { path: '',  
+      { path: '',
       component: BackOfficeComponent,
      children : [
       // { path: 'admin'  ,    component: AdmindhashComponent },
@@ -20,13 +20,13 @@ const routes: Routes = [
 
 
 
-         
-        
-    
+
+
+
      ]}
  ];
 
-  
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
