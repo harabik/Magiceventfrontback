@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Event } from 'src/app/models/event';
-import { EventService } from 'src/app/services/event.service';
+
+import { EventService } from 'src/app/services/creationevenement.service';
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 
 @Component({
   selector: 'app-listevent',
@@ -8,44 +9,23 @@ import { EventService } from 'src/app/services/event.service';
   styleUrls: ['./listevent.component.css']
 })
 export class ListeventComponent implements OnInit {
-
-  event:Event[] ;
-
-  dataSource : any;
-
-
-  eventList:Event[];  
-
-  constructor( private api :EventService) { }
-  ngOnInit(): void {
-    this.getAllevents();
-
-
-  }
+   events: any;
 
 
 
-  
 
- getAllevents(){
-   
-  this.api.getEvent().subscribe({
-   next:(res)=> {
+  constructor(
+               private router:Router,
+               private EventService: EventService
+  ) { }
+  ngOnInit() {
+    this.EventService.getAllEvent().subscribe((event ) => {
+      this.events = event;
+      console.log(this.events);
 
-     this.event=res;
-     console.log(this.event);
-    //  this.dataSource = new MatTableDataSource(res);
-      //  this.dataSource.paginator =this.paginator;
-//         this.dataSource.sort = this.sort
-//     },
-//     error:(err)=>{
-//       alert("Error while fetching the Records!!")
-//     }
-}
+
     })
-    }
   }
 
- 
 
-
+}

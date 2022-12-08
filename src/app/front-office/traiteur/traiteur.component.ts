@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TraiteurserviceService } from 'src/app/services/traiteurservice.service';
 
 @Component({
   selector: 'app-traiteur',
@@ -7,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TraiteurComponent implements OnInit {
 
-  constructor() { }
+  constructor(private s:TraiteurserviceService) { }
 
   ngOnInit(): void {
   }
+
+
+  addt(t:any){
+    this.s.addt(t).subscribe(()=>{console.log('succes')})
+  }
+    
+
+
+
+
+
+
+
   url:any;
 
   onSelect(event:any) {

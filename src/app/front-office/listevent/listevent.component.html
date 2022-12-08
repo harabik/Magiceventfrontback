@@ -7,8 +7,8 @@
 
     <div class="box-container">
 
-        <div class="box" *ngFor="let e of event; let i = index">
-            <h3 class="title">{{event[i].name}}</h3>
+        <div class="box" *ngFor="let e of events">
+            <h3 class="title">{{e.name}}</h3>
             <h3 class="amount"></h3>
             <ul>
                 <li><i class="fas fa-check"></i>full services</li>
@@ -17,11 +17,11 @@
                 <li> <i class="fas fa-check"></i> food and drinks </li>
                 <li> <i class="fas fa-check"></i> invitation card </li>
             </ul>
-            <!-- <h2 class="picture"> {{event[i].picture}}</h2> -->
-            <img class="picture" src={{event[i].picture}} alt="">
+             <h2 class="picture"> {{e.email}}</h2>
+          <!--  <img class="picture" src={{e.adresse}} alt="">-->
         </div>
 
-        
+
 
     </div>
 

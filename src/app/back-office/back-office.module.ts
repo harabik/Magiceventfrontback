@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BackOfficeRoutingModule } from './back-office-routing.module';
 import { BackOfficeComponent } from "./back-office.component";
-
+import { BrowserModule } from '@angular/platform-browser';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatChipsModule} from "@angular/material/chips";
@@ -56,9 +56,9 @@ import { DashbordComponent } from './dashbord/dashbord.component';
       NavBarComponent,
       EventsComponent,
       DashbordComponent,
-      
-      
-     
+
+
+
   ],
 
   imports: [

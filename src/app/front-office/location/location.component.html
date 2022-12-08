@@ -4,96 +4,146 @@
 
  <body> 
     
-    <div>   
+  <div>   
 
-      <form class="container">    
+    <form class="container"  #l="ngForm">    
 
-        <h4 class="text-warning text-center pt-5">Location profile</h4>  
+      <h4 class="text-warning text-center pt-5">Location profile</h4>  
 
 <label>     
 
-             Nom <input type="text" class="input" name="nomsociete" placeholder="Nom societe"    required  minlength="5"/>                   <div class="line-box">          
+           Nom <input type="text" class="input" name="nom_societe" placeholder="Nom societe"    ngModel required  minlength="5"  />                   <div class="line-box">          
+
+            <div class="line"></div>        
+
+            </div>    
+
+          </label>     
+
+          
+
+          <label>     
+
+            <input 
+
+                   type="text" 
+
+                   class="input" 
+
+                   name="adresse"        
+
+                   placeholder="Adress"   ngModel  required/>        
+
+            <div class="line-box">         
 
               <div class="line"></div>        
 
-              </div>    
+            </div>    
 
-            </label>     
+          </label>     
 
-            
+          
 
-            <label>     
+          <label>     
 
-              <input 
+        <input 
 
-                     type="text" 
+                   type="email" 
 
-                     class="input" 
+                   class="input" 
+                   ngModel
+                   name="email" 
 
-                     name="adress"        
+                   placeholder="Email"
+                      required
+                      maxlength="30"/>        
 
-                     placeholder="Adress"    required/>        
+            <div class="line-box">          
 
-              <div class="line-box">         
+              <div class="line"></div>        
 
-                <div class="line"></div>        
+      </div>    
 
-              </div>    
+          </label>     
 
-            </label>     
+          
 
-            
+          <label>     
 
-            <label>     
+            <input 
 
-          <input 
+                   type="tel" 
 
-                     type="email" 
+                   class="input" 
+                   ngModel
+                   name="num_mo" 
 
-                     class="input" 
+                   placeholder="Numero mobile" required>      
 
-                     name="password" 
+            <div class="line-box">        
 
-                     placeholder="Email"
-                        required
-                        maxlength="30"/>        
+              <div class="line"></div>      
 
-              <div class="line-box">          
+            </div>    
 
-                <div class="line"></div>        
+          </label>   
+          
+          
 
-        </div>    
 
-            </label>     
-
-            
-
-            <label>     
-
-              <input 
-
-                     type="tel" 
-
-                     class="input" 
-
-                     name="tel" 
-
-                     placeholder="Numero mobile" required>      
-
-              <div class="line-box">        
-
-                <div class="line"></div>      
-
-              </div>    
-
-            </label>     
 
             
 
-            <button type="submit">submit</button>  
+          <label>     
 
-          </form> 
+            <input 
 
-      </div> 
+                   type="text" 
 
-    </body> 
+                   class="input" 
+
+                   name="region"        
+
+                   placeholder="region"   ngModel  required/>        
+
+            <div class="line-box">         
+
+              <div class="line"></div>        
+
+            </div>    
+
+          </label>
+
+
+          <label>     
+
+            <input 
+
+                   type="text" 
+
+                   class="input" 
+
+                   name="ville"        
+
+                   placeholder="ville"   ngModel  required/>        
+
+            <div class="line-box">         
+
+              <div class="line"></div>        
+
+            </div>    
+
+          </label>
+
+
+
+
+          
+
+          <button type="submit"  (click)="addl(l.value)">submit</button>  
+
+        </form> 
+
+    </div> 
+
+  </body> 

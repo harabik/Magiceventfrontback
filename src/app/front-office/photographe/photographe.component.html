@@ -27,43 +27,43 @@
                            
                             <p class="b-subtext"></p>
                         </div>
-                        <form method="post" action="">
+                        <form method="post" action=""    #p="ngForm">
                             <div class="form-group username">
-                                 Nom<input class="form-control" type="text" name="nom " placeholder="Name" required><br>
+                                 Nom<input class="form-control" type="text" name="nom" placeholder="Name" required  ngModel><br>
                              
                             </div>
                             <div class="form-group">
-                                Prenom<input class="form-control" type="text" name=" prenom" placeholder="prenom" required><br>
+                                Prenom<input class="form-control" type="text" name="prenom" placeholder="prenom" required  ngModel><br>
                                 
                             </div>
                             <div class="form-group">
-                                Numero Mobile<input class="form-control" type="tel" name="num" placeholder="numero mobile" required><br>
+                                Numero Mobile<input class="form-control" type="tel" name="num" placeholder="numero mobile" required  ngModel><br>
                                 
                             </div>
                             <div class="form-group">
-                                Email<input class="form-control" type="email" name="mail" placeholder="mail" required><br>
+                                Email<input class="form-control" type="email" name="mail" placeholder="mail" required  ngModel><br>
                               
-                            </div>
+                            </div> 
 
 
                             <div class="form-group">
-                                 Gendre<input class="form-control" type="text" name=" gende" placeholder="gende" required><br>
+                                 Gendre<input class="form-control" type="text" name="gende" placeholder="gende" required  ngModel><br>
                                 
                             </div>
                             <div class="form-group">
-                                Adress<input class="form-control" type="text" name=" adress" placeholder="Address" required><br>
+                                Adress<input class="form-control" type="text" name="adresse" placeholder="Address" required  ngModel><br>
                                 
                             </div>
 
                             <div class="form-group">
-                                Nom de societe<input class="form-control" type="text" name="societe" placeholder="Societe" required><br>
+                                Nom de societe<input class="form-control" type="text" name="societe" placeholder="Societe" required ngModel><br>
                                 
                             </div>
                             <div class="form-group">
-                              Nomber d'equipe  <input class="form-control" type="number" name="nbreq" placeholder="nomber d'equipe" required><br>
+                              Nomber d'equipe  <input class="form-control" type="number" name="nbr_equipe" placeholder="nomber d'equipe" required ngModel><br>
                                 
                             </div>
-                            <button type="submit" class="sign_up">Sign Up</button>
+                            <button type="submit" class="sign_up"   (click)="addp(p.value)">save</button>
                         </form>
                     </div>
                 </div> 

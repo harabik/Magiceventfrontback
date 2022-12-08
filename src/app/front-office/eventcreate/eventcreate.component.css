@@ -32,7 +32,7 @@
 }
 .ng-errors.ng-touched{
     border-color: #fff;
-} 
+}
 
 
 
@@ -121,13 +121,13 @@ input::placeholder {
     margin-right: 15px;
 margin-bottom: 20px !important;
 font-size: 15px;
-padding: 20px 20 px;
+padding: 20px  20 px;
 
 
 
     /* width: 50%;
     text-align: center;
-   
+
      margin-right: 50px; */
      /* list-style: none; */
      /* text-align: center;
@@ -144,7 +144,7 @@ padding: 20px 20 px;
     /* color: black !important; */
     /* transition: all .3s; */
     /* margin-right:16px */
-/* } */ */
+/* } */
 
 
 #submit input {

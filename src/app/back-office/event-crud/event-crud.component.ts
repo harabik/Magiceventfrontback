@@ -5,6 +5,7 @@ import {MatDialog,MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import { AddeventsComponent } from '../addevents/addevents.component';
+import {Router} from "@angular/router";
 
 
 
@@ -14,24 +15,33 @@ import { AddeventsComponent } from '../addevents/addevents.component';
   styleUrls: ['./event-crud.component.css']
 })
 export class EventCrudComponent implements OnInit {
+  events: any;
   @Input() event:Event ;
-    
+
   // ['Name','Id', 'Note', 'Asset', 'Date', 'Picture' ,'Descripition']
   displayedColumns: string[] = ['name','id','asset','picture','note','date','descripition','action'];
   dataSource: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  
 
-  constructor(private dialog : MatDialog, private api : EventService) { 
+
+  constructor(private dialog : MatDialog, private api : EventService, private router:Router,
+              private EventService: EventService) {
 
   }
 
-  ngOnInit(): void {
+  getEvents(){
+    this.EventService.getAllEvents().subscribe((event ) => {
+  this.events = event;
+  console.log(this.events);
+
+
+})
+  }
+
+  ngOnInit() {
     this.getAllevents();
-   
   }
-
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -55,20 +65,23 @@ export class EventCrudComponent implements OnInit {
       }
     })
   }
-  getAllevents(){
-   
-this.api.getEvent().subscribe({
-  next:(res)=> {
-   
-      this.dataSource = new MatTableDataSource(res);
-      this.dataSource.paginator =this.paginator;
-      this.dataSource.sort = this.sort
-  },
-  error:(err)=>{
-    alert("Error while fetching the Records!!")
-  }
-  
-  })
+  getAllevents( ){
+
+this.getEvents() ;
+
+    /*
+    this.api.getEvent().subscribe
+     /* next:(res)=> {
+
+          this.dataSource = new MatTableDataSource(res);
+          this.dataSource.paginator =this.paginator;
+          this.dataSource.sort = this.sort
+      },
+      error:(err)=>{
+        alert("Error while fetching the Records!!")
+      }
+
+      })*/
   }
 
   deleteEvent(id:number){
@@ -96,4 +109,3 @@ this.api.deleteEvent(id).subscribe({
 
 }
 
- 

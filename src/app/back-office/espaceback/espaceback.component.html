@@ -8,13 +8,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"> -->
 
-</script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 
-</script>
-  
   <body>
     <div class="container">
         <div class="table-wrapper">
@@ -50,14 +47,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr *ngFor="let l of liste">
 						<td>
 							<span class="custom-checkbox">
 								<input type="checkbox" id="checkbox1" name="options[]" value="1">
 								<label for="checkbox1"></label>
 							</span>
 						</td>
-                        <td>Thomas Hardy</td>
+                        <td>{{l.nom}}</td>
                         <td>thomashardy@mail.com</td>
 						<td>89 Chiaroscuro Rd, Portland, USA</td>
                         <td>(171) 555-2222</td>
@@ -140,7 +137,7 @@
 	<div id="addEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form  name="form"  #form="ngForm" autocomplete="off" >
+				<form  #d="ngForm" autocomplete="off" >
 					<div class="modal-header">						
 						<h4 class="modal-title">add espace </h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -170,10 +167,10 @@
 
 						<div class="form-group">
 							<label>Address </label>
-							<input type="text" class="form-control" name="adress" required
-							ngModel name="adress"
-							#adress="ngModel"/>
-						  <div class="alert alert-danger" *ngIf="adress.touched   && adress.invalid"> verfier l'adress </div>
+							<input type="text" class="form-control" name="adresse" required
+							ngModel name="adresse"
+							#adresse="ngModel"/>
+						  <div class="alert alert-danger" *ngIf="adresse.touched   && adresse.invalid"> verfier l'adress  </div>
 						</div>
 
 
@@ -181,10 +178,10 @@
 						
 						<div class="form-group">
 							<label>Phone</label>
-							<input type="tel" class="form-control" name="tel" required
-							ngModel name="tel"
-							#tel="ngModel"/>
-						  <div class="alert alert-warning" *ngIf="tel.touched   && tel.invalid"> verfier phone</div>
+							<input type="tel" class="form-control" name="num_mo" required
+							ngModel name="num_mo"
+							#num_mo="ngModel"/>
+						  <div class="alert alert-warning" *ngIf="num_mo.touched   && num_mo.invalid"> verfier phone</div>
 						</div>	
 
 
@@ -193,7 +190,7 @@
                         <div class="form-group">
 							<label>region </label>
 							<input type="text" class="form-control" name="region" required
-							ngModel name="region"
+							ngModel  name="region"
 							#region="ngModel"/>
 						  <div class="alert alert-danger" *ngIf="region.touched   && region.invalid"> region vide  </div>
 						</div>
@@ -216,10 +213,10 @@
 						  <div class="alert alert-danger" *ngIf="surface.touched   && surface.invalid"> surface vide  </div>
 						</div>
                         
-                        
+<!--                         
                         <div class="form-group">
-                            <label >type espace </label>
-                            <select class="form-group" class="form-control" name="type" required
+                            <label >type espace </label> -->
+                            <!-- <select class="form-group" class="form-control" name="type" required
 							ngModel name="type"
 							#type="ngModel">
 						  <div class="alert alert-danger" *ngIf="type.touched   && type.invalid"> ville vide  </div>   
@@ -230,11 +227,28 @@
                             <option value="cafe">cafe </option>
                             <option value="espacevid">espace vide  </option>
                          </select>
-                        </div>
+
+
+
+
+                        </div> -->
+
+						<div class="col-md-12" >
+							<label class="labels" >type espace </label>
+							<select class="col-md-12 " required >   
+								<option *ngFor="let espace of listespace" [value]="espace.id">{{espace.nom}}</option>
+							
+						 </select>
+						</div>
+
+
+
+
+
 					</div>
 					<div class="modal-footer">
 						<input type="reset" class="btn btn-default" data-dismiss="modal" value="reset">
-						<input type="submit" class="btn btn-info" value="Save"  [disabled]="form.invalid">
+						<input type="submit" class="btn btn-info" value="Save"  [disabled]="d.invalid" (click)="add(d.value)">
 					</div>
 				</form>
 			</div>
@@ -244,7 +258,7 @@
 	<div id="editEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form  name="formss"  #formss="ngForm">
+				<form  name="formss"  #d="ngForm">
 					<div class="modal-header">						
 						<h4 class="modal-title">Edit espace </h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -252,29 +266,29 @@
 					<div class="modal-body"><br><br><br><br><br><br><br><br><br>					
 						<div class="form-group">
 							<label>Name</label>
-							<input type="text" class="form-control"  name="nomm" required 
-							ngModel name="nomm"
-							#nomm="ngModel"/>
-						  <div class="alert alert-warning" *ngIf="nomm.touched   && nomm.invalid"> required</div>
+							<input type="text" class="form-control"  name="nom" required 
+							ngModel name="nom"
+							#nom="ngModel"/>
+						  <div class="alert alert-warning" *ngIf="nom.touched   && nom.invalid"> required</div>
 						</div>
 
 
 						<div class="form-group">
 							<label>nomber de place </label>
-							<input type="number" class="form-control" name="nbrr" required
+							<input type="number" class="form-control" name="nbr" required
 							ngModel name="nbr"
-							#nbrr="ngModel"
+							#nbr="ngModel"
 							min="10"/>
-						  <div class="alert alert-warning" *ngIf="nbrr.touched   && nbrr.invalid"> verfier nombre de place </div>
+						  <div class="alert alert-warning" *ngIf="nbr.touched   && nbr.invalid"> verfier nombre de place </div>
 						  <!-- <div class="alert alert-warning" *ngIf="nbrr.errors?.min"> max de 5 </div> -->
 						</div>
 						
 						  <div class="form-group">
 							<label>Address </label>
-							<input type="text" class="form-control" name="adresss" required
-							ngModel name="adresss"
-							#adresss="ngModel"/>
-						  <div class="alert alert-warning" *ngIf="adresss.touched   && adresss.invalid"> verfier l'adress </div>
+							<input type="text" class="form-control" name="adresse" required
+							ngModel name="adresse"
+							#adresse="ngModel"/>
+						  <div class="alert alert-warning" *ngIf="adresse.touched   && adresse.invalid"> verfier l'adress </div>
 						</div>
 
 
@@ -282,20 +296,20 @@
 
 						<div class="form-group">
 							<label>Phone</label>
-							<input type="text" class="form-control" name="tell" required
-							ngModel name="tell"
-							#tell="ngModel"/>
-						  <div class="alert alert-warning" *ngIf="tell.touched   && tell.invalid"> verfier phone</div>
+							<input type="text" class="form-control" name="num_mo" required
+							ngModel name="num_mo"
+							#num_mo="ngModel"/>
+						  <div class="alert alert-warning" *ngIf="num_mo.touched   && num_mo.invalid"> verfier phone</div>
 						</div>	
 
 
 
                         <div class="form-group">
 							<label>region </label>
-							<input type="text" class="form-control" name="regionn" required
-							ngModel name="regionn"
-							#regionn="ngModel"/>
-						  <div class="alert alert-warning" *ngIf="regionn.touched   && regionn.invalid"> region vide  </div>
+							<input type="text" class="form-control" name="region" required
+							ngModel name="region"
+							#region="ngModel"/>
+						  <div class="alert alert-warning" *ngIf="region.touched   && region.invalid"> region vide  </div>
 						</div>
 
 
@@ -304,18 +318,18 @@
 
                         <div class="form-group">
 							<label>ville </label>
-							<input type="text" class="form-control" name="villee" required
-							ngModel name="villee"
-							#villee="ngModel"/>
-						  <div class="alert alert-warning" *ngIf="villee.touched   && villee.invalid"> ville vide  </div>
+							<input type="text" class="form-control" name="ville" required
+							ngModel name="ville"
+							#ville="ngModel"/>
+						  <div class="alert alert-warning" *ngIf="ville.touched   && ville.invalid"> ville vide  </div>
 						</div>
                         <div class="form-group">
 							<label>surface </label>
-							<input type="number" class="form-control"  name="surfacee" required
+							<input type="number" class="form-control"  name="surface" required
 							
-							ngModel name="surfacee"
-							#surfacee="ngModel"/>
-						  <div class="alert alert-warning" *ngIf="surfacee.touched   && surfacee.invalid"> surface vide  </div>
+							ngModel name="surface"
+							#surface="ngModel"/>
+						  <div class="alert alert-warning" *ngIf="surface.touched   && surface.invalid"> surface vide  </div>
 						</div>
                         
                         
@@ -333,7 +347,7 @@
 					</div>
 					<div class="modal-footer">
 						<input type="reset" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-info" value="Save"  [disabled]="formss.invalid">
+						<input type="submit" class="btn btn-info" value="Save"  [disabled]="d.invalid"  (click)="update(d.value)" >
 					</div>
 				</form>
 			</div>
@@ -343,7 +357,7 @@
 	<div id="deleteEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form>
+				<form   #d="ngForm">
 					<div class="modal-header">						
 						<h4 class="modal-title">Delete espace </h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -354,7 +368,7 @@
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btn btn-danger" value="Delete">
+						<input type="submit" class="btn btn-danger" value="Delete" (click)="deletes (d.value)">
 					</div>
 				</form>
 			</div>

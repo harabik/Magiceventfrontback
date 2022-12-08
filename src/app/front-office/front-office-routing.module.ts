@@ -24,10 +24,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  
+
 
   { path: '',
-  
+
     component: FrontOfficeComponent ,
     children: [
       { path: '',  component:HomeComponent },
@@ -45,15 +45,15 @@ const routes: Routes = [
       { path: 'login/serveur' ,   component:ServeurComponent },
       { path: 'login/traiteur' ,   component:TraiteurComponent },
       // {path:'/*',component: PageNotFoundComponent},
-    
+
       {path:'login' , component: LoginComponent},
       {path:'login/signup' , component:SignupComponent},
       {path:'login/signupbus-user' , component:SignupbusinessUserComponent},
       {path:'login/forgot_password' , component:ForgotComponent},
-      
+
        ]}
       ];
- 
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

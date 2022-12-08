@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServeurserviceService } from 'src/app/services/serveurservice.service';
 
 @Component({
   selector: 'app-serveur',
@@ -7,10 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServeurComponent implements OnInit {
 
-  constructor() { }
+ 
+  constructor(private s:ServeurserviceService) { }
 
   ngOnInit(): void {
   }
+
+
+
+  adds(s:any){
+    this.s.adds(s).subscribe(()=>{console.log('succes')})
+  }
+    
+
+
+
+
+
+
+
+
   url:any;
   onSelect(event:any) {
     let fileType = event.target.files[0].type;
