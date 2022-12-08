@@ -1,50 +1,65 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up Form</title>
 
-</head>
-<body>
-
-<form action="index.html" method="post" [formGroup]="signForm" (ngSubmit)="signup()" id="form">
-
-  <h1>Sign Up</h1>
-
-  <fieldset>
-    <legend><span class="number">1</span>Your basic info</legend>
-    <label for="name">Name:</label>
-    <input formControlName="name" type="text" id="name" name="user_name" class="form-control">
-    <span class="text-danger" *ngIf="signForm.controls['name'].dirty && signForm.hasError('required','name')">*Name is required</span>
-
-    <label for="name">Last Name :</label>
-    <input formControlName="lname" type="text" id="name" name="user_lname" class="form-control">
-    <span class="text-danger" *ngIf="signForm.controls['lname'].dirty && signForm.hasError('required','lname')">*Last Name is required</span>
-
-
-
-
-    <label for="mail">Email:</label>
-    <input formControlName="email" type="email" id="mail" name="user_email" class="form-control">
-    <span class="text-danger" *ngIf="signForm.controls['email'].dirty && signForm.hasError('required','email')">*Email is required</span>
-
-    <label for="password">Password:</label>
-    <input formControlName="pass" type="password" id="password" name="user_password" class="form-control">
-    <span class="text-danger" *ngIf="signForm.controls['pass'].dirty && signForm.hasError('required','pass')">*Password is required</span>
-
-
-    <label for="name">Mobile Number :</label>
-    <input formControlName="tlf" type="number" id="name" name="tlf" class="form-control">
-    <span class="text-danger" *ngIf="signForm.controls['tlf'].dirty && signForm.hasError('required','tlf')">*Mobile is required</span>
-
-
-
-  </fieldset>
-
-  <button type="submit" [disabled]="!signForm.valid" class="btn btn-success">Sign Up</button>
-
-</form>
-
-</body>
-
-
+  <br><br><br><br><br>
+<div class="boy" >
+  <div class="container">
+    <div class="title">Registration User </div>
+    <div class="content">
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="text" placeholder="Confirm your password" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+        <div class="button"  >
+          <input type="submit" value="Register Business-user"[routerLink]="['/login/signupbus-user']"  >
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- routerLink=" /signupbus-user" -->
+<router-outlet></router-outlet> 

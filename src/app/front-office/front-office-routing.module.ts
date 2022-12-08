@@ -48,7 +48,7 @@ const routes: Routes = [
 
       {path:'login' , component: LoginComponent},
       {path:'login/signup' , component:SignupComponent},
-      {path:'login/signupbusiness-user' , component:SignupbusinessUserComponent},
+      {path:'login/signupbus-user' , component:SignupbusinessUserComponent},
       {path:'login/forgot_password' , component:ForgotComponent},
 
        ]}
