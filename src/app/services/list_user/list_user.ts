@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import {environment} from "../../../environments/environment";
 
 import {Observable} from "rxjs";
+import {Events} from "../../models/event";
+import {Animateur} from "../../models/service/animateur";
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +18,11 @@ export class List_userService {
   }
 
 
-  getlist_animateurs(){
-    return this.http.get(this.url + 'animateurs')
+  getlist_animateurs(): Observable<Animateur[]> {
+    return this.http.get<Animateur[]>(this.url + 'animateurs')
   }
-  getanimateurById(id: Number){
-    return this.http.get(this.url + 'animateurs/'+ id)
+  getanimateurById(id: any): Observable<Animateur>{
+    return this.http.get<Animateur>(this.url + 'animateurs/'+ id)
   }
 
   getlist_espaces(){

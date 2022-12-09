@@ -40,6 +40,6 @@ updateespace(d:any){
 
 //impotant khalil
 deleteespace(d:any){
-  return this.http.delete('http://localhost:3000/espaces/remove',d)
+  return this.http.delete('http://localhost:3000/espaces/remove/'+d)
 }
 }

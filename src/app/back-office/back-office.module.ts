@@ -42,6 +42,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AddeventsComponent } from './addevents/addevents.component';
 import { EventsComponent } from './events/events.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
+import { PhotographebackComponent } from './photographeback/photographeback.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { DashbordComponent } from './dashbord/dashbord.component';
       NavBarComponent,
       EventsComponent,
       DashbordComponent,
+      PhotographebackComponent,
 
 
 
@@ -104,6 +106,10 @@ import { DashbordComponent } from './dashbord/dashbord.component';
       ObserversModule,
       A11yModule,
       MatChipsModule,
+      BrowserModule,
+      
+      
+      
 
 
   ],

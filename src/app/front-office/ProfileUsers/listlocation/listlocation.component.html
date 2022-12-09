@@ -1,0 +1,35 @@
+<div class="container">
+  <br><br><br><br><br>
+  <div class="section">
+    <!-- container -->
+    <div class="container">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-4 col-sm-6" *ngFor="let e of espaces" >
+            <div class="card my-2" >
+              <img [src]="e.photo"  width="200px" class="card-img-top" (click)="selectProduct(e.id)" style="cursor:pointer;">
+              <div class="card-header">
+                <div class="card-title">
+                  <p>{{e.nom | titlecase}}</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <h6>{{e.adresse.substr(0, 40)}} ....</h6>
+                <!--<p class="lead">{{p.PRIX | currency:'TND'}}</p>-->
+              </div>
+
+              <div class="row d-flex justify-content-center border-primary my-3">
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

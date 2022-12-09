@@ -1,8 +1,4 @@
-.service {
 
-
-
-}
 .service .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 35rem));
@@ -11,7 +7,7 @@
 
 .service .box-container .box{
     border-radius: .5rem;
-    background: rgb(66, 46, 54);
+    background: rgb(67, 67, 82);
     text-align: center;
     padding:2.5rem;
 }
@@ -26,7 +22,7 @@
     color:#fff;
 }
 .service{
-    background-color: #040919;
+  /*  background-color: #040919;*/
 
 }
 

@@ -1,5 +1,7 @@
 
 
+<div class="container">
+  <div class="section">
 
 
 
@@ -19,20 +21,20 @@
                     <span>id</span>
                     <input type="number" name="id" id="id" placeholder="Write id..."  [(ngModel)]="createvent.id" #id="ngModel"required  >
                     <div class="form-text text-danger" *ngIf="id.errors?.['required']&&id.touched"> <p>Id is Required  </p></div>
-                        
-                    
+
+
                 </div>
-                
+
                 <div>
-                
+
                     <span>name</span>
-                    <input type="text" name="name" id="name" placeholder="Write your name here..." 
+                    <input type="text" name="name" id="name" placeholder="Write your name here..."
                     [(ngModel)]="createvent.name" #name="ngModel" required  minlength="3">
                     <div class="form-text text-danger" *ngIf="name.errors?.['required']&& name.touched"><p>name is Required</p> </div>
                     <div class="form-text text-danger" *ngIf="name.errors?.['minlength']"> <p> name must have 3 character</p> </div>
-                                                                 
+
                 </div>
-            
+
                 <div>
                     <!-- <---this is the select option--->
                     <span>event type</span>
@@ -54,8 +56,8 @@
                 <div>
                     <span>time</span>
 
-                  
-                    <input type="time" name="time" id="time" placeholder="Time" 
+
+                    <input type="time" name="time" id="time" placeholder="Time"
                      name="What time ?" [(ngModel)]="createvent.creates_at" #creates_at="ngModel" required>
                      <div class="form-text text-danger" *ngIf="creates_at.errors?.['required']&&creates_at.touched"> <p>time is Required</p> </div>
 
@@ -80,10 +82,10 @@
                     <span>participants</span>
 
                     <input type="number" name="participant" id="particpants" placeholder="Write number here..." [(ngModel)]="createvent.nbr_invit" #nbr_invit="ngModel"required>
-                    <div class="form-text text-danger" *ngIf="nbr_invit.errors?.['required']&&nbr_invit.touched"> <p>Participant is Required</p> </div> 
+                    <div class="form-text text-danger" *ngIf="nbr_invit.errors?.['required']&&nbr_invit.touched"> <p>Participant is Required</p> </div>
 
                 </div>
-                 <!-- --------------busines users select----------- --> 
+                 <!-- --------------busines users select----------- -->
                 <div>
                     <!-- <---this is the select option  espace--->
                     <span>caterer</span>
@@ -161,24 +163,24 @@
 
 
                     <input type="date" name="date" id="date" placeholder="date" [(ngModel)]="createvent.date_event" #date_event="ngModel"required>
-                    <div class="form-text text-danger" *ngIf="date_event.errors?.['required']&&date_event.touched"> <p>date is Required</p> </div> 
+                    <div class="form-text text-danger" *ngIf="date_event.errors?.['required']&&date_event.touched"> <p>date is Required</p> </div>
 
                 </div>
                 <div>
                     <span>phone</span>
-      
+
                     <input class="form-control" type="number" name="phone" id="phone" placeholder="Write your number here..."  [(ngModel)]="createvent.phone" #phone="ngModel"required>
-                    <div class="form-text text-danger" *ngIf="phone.errors?.['required']&&phone.touched"><p>Phone is Required</p>  </div> 
+                    <div class="form-text text-danger" *ngIf="phone.errors?.['required']&&phone.touched"><p>Phone is Required</p>  </div>
 
                 </div>
                 <div>
                     <span>email</span>
-                        
-                
+
+
                     <input type="email" name="email" id="email" placeholder="Write your email here..."  [(ngModel)]="createvent.email" #email="ngModel"
-                    required 
+                    required
                     class="form-control" >
-                    <div class="form-text text-danger" *ngIf="email.errors?.['required']&&email.touched"> <p>Email is Required</p> </div> 
+                    <div class="form-text text-danger" *ngIf="email.errors?.['required']&&email.touched"> <p>Email is Required</p> </div>
 
                 </div>
 
@@ -189,7 +191,7 @@
                 </div> -->
                 <!-- routerLink="devi"  -->
                 <!-- <div id="submit">
-                    <input  type="submit" value="SUBMIT" id="submit" class="btn btn-primary "> 
+                    <input  type="submit" value="SUBMIT" id="submit" class="btn btn-primary ">
                 </div> -->
                 <div class="sub">
                     <button type="submit" value="SUBMIT" id="submit" class="btn btn-outline-success">Submit</button>
@@ -198,13 +200,13 @@
                      <button  type="button" routerLink="/devi" class="btn btn-outline-info">Quotation</button>
                 </div>
 
-       
+
 
 
             </form>
         </div>
     </div>
 </div>
-   
+  </div></div>
 
 
