@@ -1,20 +1,24 @@
+.service {
 
+
+
+}
 .service .box-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-    gap:1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 35rem));
+    gap:2rem;
 }
 
 .service .box-container .box{
     border-radius: .5rem;
-    background:rgb(131, 16, 54);
+    background: rgb(66, 46, 54);
     text-align: center;
     padding:2.5rem;
 }
 
-.service .box-container .box i{
-    height: 6rem;
-    width: 6rem;
+.service .box-container .box img{
+    height: 30rem;
+    width: 30rem;
     line-height: 6rem;
     border-radius: 50%;
     font-size: 2.5rem;
@@ -27,13 +31,8 @@
 }
 
 .service .box-container .box h3{
-    font-size: 2rem;
+    font-size: 3rem;
     color:#fff;
     padding:1rem 0;
 }
 
-.service .box-container .box p{
-    font-size: 1.4rem;
-    color:#eee;
-    line-height: 1.8;
-}

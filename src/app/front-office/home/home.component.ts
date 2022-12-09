@@ -12,6 +12,8 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
    animateurs: any;
+  private traiteurs: any;
+  private espaces: any;
 
 
 
@@ -20,15 +22,45 @@ export class HomeComponent implements OnInit {
               private router:Router
   ) { }
 
-  ngOnInit() {
 
-
+  getAnimateur(){
     this.listuserserve.getlist_animateurs().subscribe((animate : any ) => {
       this.animateurs = animate;
       console.log(this.animateurs);
 
     });
   }
+  getTraiteur(){
+    this.listuserserve.getlist_traiteurs().subscribe((traiteurs : any ) => {
+      this.traiteurs = traiteurs;
+      console.log(this.traiteurs);
+
+    });
+  }
+  getEspace(){
+    this.listuserserve.getlist_espaces().subscribe((espace : any ) => {
+      this.espaces = espace;
+      console.log(this.espaces);
+
+    });
+  }
+
+
+  ngOnInit() {
+this.getAnimateur() ;
+this.getTraiteur();
+this.getEspace() ;
+
+
+  }
+
+
+
+
+
+
+
+
 
   selectProduct(id: Number) {
     this.listuserserve.getanimateurById(id).subscribe((animate : any ) => {

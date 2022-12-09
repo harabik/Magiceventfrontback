@@ -20,6 +20,19 @@ import { SignupComponent } from './signup/signup.component';
 import { SignupbusinessUserComponent } from './signupbusiness-user/signupbusiness-user.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { RouterModule, Routes } from '@angular/router';
+import {ProfilespaceComponent} from "./ProfileUsers/profilespace/profilespace.component";
+import {ProfilanimateurComponent} from "./ProfileUsers/profilanimateur/profilanimateur.component";
+import {ProfillocationComponent} from "./ProfileUsers/profillocation/profillocation.component";
+import {ProfilserveurComponent} from "./ProfileUsers/profilserveur/profilserveur.component";
+import {ProfiltraiteurComponent} from "./ProfileUsers/profiltraiteur/profiltraiteur.component";
+import {ProfilphotographeComponent} from "./ProfileUsers/profilphotographe/profilphotographe.component";
+import {ListtraiteurComponent} from "./ProfileUsers/listtraiteur/listtraiteur.component";
+import {ListserveurComponent} from "./ProfileUsers/listserveur/listserveur.component";
+import {ListphotographeComponent} from "./ProfileUsers/listphotographe/listphotographe.component";
+import {ListlocationComponent} from "./ProfileUsers/listlocation/listlocation.component";
+import {ListanimateurComponent} from "./ProfileUsers/listanimateur/listanimateur.component";
+import {ListespaceComponent} from "./ProfileUsers/listespace/listespace.component";
+import {Home2Component} from "./home2/home2.component";
 
 
 
@@ -50,6 +63,23 @@ const routes: Routes = [
       {path:'login/signup' , component:SignupComponent},
       {path:'login/signupbus-user' , component:SignupbusinessUserComponent},
       {path:'login/forgot_password' , component:ForgotComponent},
+
+
+      // profile des espace
+      {path:'espace/:id' , component:ProfilespaceComponent  },
+      {path:'animateur/:id' , component:ProfilanimateurComponent  },
+      {path:'location/:id' , component:ProfillocationComponent  },
+      {path:'photographe/:id' , component:ProfilphotographeComponent  },
+      {path:'traiteur/:id' , component:ProfiltraiteurComponent  },
+      {path:'serveur/:id' , component:ProfilserveurComponent },
+
+      //lists des user
+      {path:'espace' , component:ListespaceComponent  },
+      {path:'animateur' , component:ListanimateurComponent  },
+      {path:'location' , component:ListlocationComponent  },
+      {path:'photographe' , component:ListphotographeComponent  },
+      {path:'traiteur' , component:ListtraiteurComponent  },
+      {path:'serveur' , component:ListserveurComponent },
 
        ]}
       ];

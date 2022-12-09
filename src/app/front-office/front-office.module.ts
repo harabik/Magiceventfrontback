@@ -43,6 +43,19 @@ import { SignupbusinessUserComponent } from './signupbusiness-user/signupbusines
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FrontOfficeRoutingModule } from './front-office-routing.module';
+import { ProfilespaceComponent } from './ProfileUsers/profilespace/profilespace.component';
+import { ProfiltraiteurComponent } from './ProfileUsers/profiltraiteur/profiltraiteur.component';
+import { ProfilanimateurComponent } from './ProfileUsers/profilanimateur/profilanimateur.component';
+import { ProfilserveurComponent } from './ProfileUsers/profilserveur/profilserveur.component';
+import { ProfilphotographeComponent } from './ProfileUsers/profilphotographe/profilphotographe.component';
+import { ProfillocationComponent } from './ProfileUsers/profillocation/profillocation.component';
+import { ListespaceComponent } from './ProfileUsers/listespace/listespace.component';
+import { ListanimateurComponent } from './ProfileUsers/listanimateur/listanimateur.component';
+import { ListlocationComponent } from './ProfileUsers/listlocation/listlocation.component';
+import { ListphotographeComponent } from './ProfileUsers/listphotographe/listphotographe.component';
+import {ListserveurComponent} from "./ProfileUsers/listserveur/listserveur.component";
+import {ListtraiteurComponent} from "./ProfileUsers/listtraiteur/listtraiteur.component";
+import { Home2Component } from './home2/home2.component';
 
 @NgModule({
     declarations: [
@@ -68,10 +81,24 @@ import { FrontOfficeRoutingModule } from './front-office-routing.module';
         SignupComponent,
         SignupbusinessUserComponent,
         ForgotComponent,
-        TraiteurComponent
+        TraiteurComponent,
+        ProfilespaceComponent,
+        ProfiltraiteurComponent,
+        ProfilanimateurComponent,
+        ProfilserveurComponent,
+        ProfilphotographeComponent,
+        ProfillocationComponent,
+        ListespaceComponent,
+        ListanimateurComponent,
+        ListlocationComponent,
+        ListphotographeComponent,
+      ListserveurComponent ,
+      ListtraiteurComponent,
+      Home2Component
+
     ],
     imports: [
-        
+
         CommonModule,
         FrontOfficeRoutingModule,
         FormsModule,
