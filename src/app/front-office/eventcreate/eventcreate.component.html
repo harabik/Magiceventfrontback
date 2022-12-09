@@ -180,7 +180,7 @@
                     <input type="email" name="email" id="email" placeholder="Write your email here..."  [(ngModel)]="createvent.email" #email="ngModel"
                     required
                     class="form-control" >
-                    <div class="form-text text-danger" *ngIf="email.errors?.['required']&&email.touched"> <p>Email is Required</p> </div>
+                    <div class="form-text text-danger" *ngIf="email.errors?.['required']&&email.touched" > <p>Email is Required</p> </div>
 
                 </div>
 

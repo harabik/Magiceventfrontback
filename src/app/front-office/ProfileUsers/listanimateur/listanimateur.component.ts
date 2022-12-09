@@ -8,23 +8,22 @@ import {Router} from "@angular/router";
   styleUrls: ['./listanimateur.component.css']
 })
 export class ListanimateurComponent implements OnInit {
-  animateurs: any;
+  espaces: any;
 
 
   constructor( private listuserserve : List_userService ,
                private router:Router) { }
 
   ngOnInit(): void {
-    this.listuserserve.getlist_animateurs().subscribe((animateur) => {
-      this.animateurs = animateur;
-      console.log(this.animateurs);
+    this.listuserserve.getlist_animateurs().subscribe((espace : any ) => {
+      this.espaces = espace;
+      console.log(this.espaces);
 
     });
   }
 
-  selectAnimateurs(id: number) {
+  selectEspaces(id: number) {
     this.router.navigate(['/animateur', id]).then();
   }
-
-
 }
+

@@ -7,7 +7,8 @@
       <div class="col-md-12">
         <ul class="breadcrumb-tree">
           <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/espace">All espace</a></li>
+          <li><a routerLink="/service">All Service</a></li>
+          <li><a routerLink="/espace">Espaces</a></li>
           <li class="active">{{espace.nom}}</li>
 
           <!--   <li><a href="#">{{prod.NOM_FAMILLE}}</a></li>-->
@@ -29,14 +30,14 @@
     <!-- row -->
     <div class="row d-flex">
       <!-- Product main img -->
-      <div class="col-md-5 col-md-push-2">
+      <div class="col-md-5">
         <div >
 
 
 
 
 
-            <img class="zoom"  [src]="espace.photo"  alt="">
+            <img class="zoom"  [src]="espace.photo"  alt=""   width="600px" height="400px">
 
 
 
@@ -61,7 +62,7 @@
       <div class="col-md-5">
         <div class="product-details">
           <h1 >{{espace.nom}}</h1>
-          <h4>{{espace.prenom}}</h4>
+          <h4>{{espace.region}}</h4>
 
           <div>
             <!--<h3 class="product-price">{{product?.PRIX | currency:''}} </h3>-->
@@ -73,18 +74,30 @@
 
 
           <ul class="product-links">
-            <li>Category:</li>
-            <li><a href="#">{{espace.id_region}}</a></li>
+            <li>Region:</li>
+            <li><h2>{{espace.region}}</h2></li>
           </ul>
           <ul class="product-links">
-            <li>Famille:</li>
-            <li><a href="#">{{espace.id_user}}</a></li>
+            <li>ville:</li>
+            <li><h2>{{espace.ville}}</h2></li>
+          </ul>
+
+
+          <ul class="product-links">
+            <li>surface:</li>
+            <li><h2>{{espace.surface}}</h2></li>
+          </ul>
+          <ul class="product-links">
+            <li>ville:</li>
+            <li><h2>{{espace.num_mo}}</h2></li>
           </ul>
           <br>
 
+          <button (click)="reservation(espace.id)"  class="add-to-cart-btn"  >Reservation
+          </button>
 
-
-
+          <button (click)="devi(espace.id)"  class="add-to-cart-btn"  > Demende Devis
+          </button>
 
 
           <ul class="product-links">
@@ -186,26 +199,26 @@
 
 
       <!-- product -->
-      <div class="col-md-3 col-xs-6" *ngFor="let p of espaces" >
+      <div class="col-md-3 col-xs-6" *ngFor="let e of espaces" >
         <div class="product">
           <div class="product-img" >
 
 
 
-            <div *ngIf="p.IMG !== null ; then thenBlock else elseBlock"></div>
+            <div *ngIf="e.photo !== null ; then thenBlock else elseBlock"></div>
             <ng-template #thenBlock>
-              <img class="zoom"  [src]="p.photo"  alt="" width="200px"  height="200px" class="card-img-top" (click)="selectEspaces(p.id)">
+              <img class="zoom"  [src]="e.photo"  alt="" width="200px"  height="200px" class="card-img-top" (click)="selectEspaces(e.id)">
 
             </ng-template>
             <ng-template #elseBlock>
-              <img class="zoom"  [src]="p.photo"  alt="" width="200px"  height="200px" class="card-img-top" (click)="selectEspaces(p.id)">
+              <img class="zoom"  [src]="e.photo"  alt="" width="200px"  height="200px" class="card-img-top" (click)="selectEspaces(e.id)">
             </ng-template>
 
           </div>
           <div class="product-body">
 
-            <h3 class="product-name"> <p>{{p.nom | titlecase}}</p></h3>
-            <h6>{{p.adresse.substr(0, 70)}} </h6>
+            <h3 class="product-name"> <p>{{e.nom | titlecase}}</p></h3>
+            <h6>{{e.adresse.substr(0, 70)}} </h6>
             <h4 class="product-price">
               <del class="product-old-price"></del>
             </h4>

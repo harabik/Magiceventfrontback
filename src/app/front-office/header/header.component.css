@@ -17,6 +17,11 @@ boy{
   border-color: #ffffff;
   background-color: rgb(2, 27, 49);
    size: A4;
+
+}
+
+.header .navba {
+  margin-left: 70Px;
 }
 
 .header .navba a{
@@ -28,7 +33,7 @@ boy{
     font-size: 17px;
   font-style: inherit;
     /* font-weight: bold; */
-	margin-left: 10px;
+	margin-left: 10Px;
 	margin-right: 10px;
     color: #ffffff;
   border-color: #0e1b4d;

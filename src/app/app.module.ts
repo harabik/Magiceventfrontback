@@ -29,11 +29,11 @@ import { BrowserModule } from '@angular/platform-browser';
 @NgModule({
   declarations: [
     AppComponent,
- 
-    
 
-   
-    
+
+
+
+
 
 
   ],
@@ -60,7 +60,7 @@ import { BrowserModule } from '@angular/platform-browser';
     LayoutModule,
     FrontOfficeModule,
     BackOfficeModule
-    
+
 
 
   ],

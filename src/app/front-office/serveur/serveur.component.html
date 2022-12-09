@@ -5,8 +5,8 @@
                 <div class="image"> <img [src]="url" height="150px" width="150px"> <br>
                     <input type="file" (change)="onSelect($event)"> </div>
                 <div class="d-flex flex-column ms-3 user-details">
-                   
-                   
+
+
                 </div>
             </div>
             <h4>Serveur profile</h4>
@@ -14,10 +14,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="inputs"> <label>Name</label> <input class="form-control" type="text" placeholder="Name" name="nom" required ngModel
-                         
+
                         ngModel name="nom"
                         #nom="ngModel"/>
-                      <div class="alert alert-danger" *ngIf="nom.touched   && nom.invalid"> required</div> 
+                      <div class="alert alert-danger" *ngIf="nom.touched   && nom.invalid"> required</div>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -33,7 +33,7 @@
                         #date_naissance="ngModel"> </div> <div class="alert alert-danger" *ngIf="date_naissance.touched   && date_naissance.invalid"> date invalide </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="inputs"> <label >Gendre</label> 
+                    <div class="inputs"> <label >Gendre</label>
                         <select  class="col-md-6" name="gende" ngModel required>
                         <option selected value="m">M</option>
                         <option value="f">F</option>
@@ -41,14 +41,14 @@
                 </div>
                 <div class="col-md-6">
                     <div class="inputs"> <label>Language</label> <input class="form-control" type="text" placeholder="language" name="langue"required ngModel
-                        
+
                         ngModel name="langue"
                         #langue="ngModel"
                         />
                       <div class="alert alert-danger" *ngIf="langue.touched   && langue.invalid"> language invalid </div> </div>
                 </div>
-    
-    
+
+
                 <div class="col-md-6">
                     <div class="inputs"> <label>Address</label> <input class="form-control" type="text" placeholder="address" name="adresse"required ngModel
                         ngModel name="adresse"
@@ -57,8 +57,8 @@
                      <div class="alert alert-danger" *ngIf="adresse.touched   && adresse.invalid"> adress invalid  </div></div>
                 </div>
                 <div class="col-md-6">
-                    <div class="inputs"> <label>Tel</label> <input class="form-control" type="tel" placeholder="tel" name="num_mo"required ngModel pattern="[+]{1}[0-9]{11,14}" 
-                        
+                    <div class="inputs"> <label>Tel</label> <input class="form-control" type="tel" placeholder="tel" name="num_mo"required ngModel pattern="[+]{1}[0-9]{11,14}"
+
                         ngModel name="num_mo"
                         #num_mo="ngModel"
                         />
@@ -66,13 +66,13 @@
                 </div>
 
 
-                     
+
 
 
 
                 <div class="col-md-6">
                     <div class="inputs"> <label>region</label> <input class="form-control" type="text" placeholder="region" name="region"required ngModel
-                        
+
                         ngModel name="region"
                         #region="ngModel"
                         />
@@ -82,13 +82,13 @@
 
                 <div class="col-md-6">
                     <div class="inputs"> <label>Ville</label> <input class="form-control" type="text" placeholder="Ville" name="ville" required ngModel
-                        
+
                         ngModel name="ville"
                         #ville="ngModel"
                         />
                       <div class="alert alert-danger" *ngIf="ville.touched   && ville.invalid"> ville invalid </div> </div>
                 </div>
-               
+
                 <div class="col-md-6">
                     <div class="inputs"> <label>taill en cm</label> <input class="form-control" type="number" placeholder="taille" name="taille" required ngModel
                         ngModel name="taille"
@@ -96,13 +96,13 @@
                         minlength='8'/>
                       <div class="alert alert-danger" *ngIf="taille.touched   && taille.invalid"> taillinvalide </div> </div>
                 </div>
-                
-        
+
+
             </div>
-           
-            <div class="mt-3 gap-2 d-flex justify-content-end"> <button class="px-3 btn btn-sm btn-outline-primary"  type="reset">Cancel</button> 
+
+            <div class="mt-3 gap-2 d-flex justify-content-end"> <button class="px-3 btn btn-sm btn-outline-primary"  type="reset">Cancel</button>
                 <button class="px-3 btn btn-sm btn-primary"  type="submit" [disabled]="s.invalid"    (click)="adds(s.value)">Save</button> </div>
-       
+
         </form>
         </div>
     </div></body>
