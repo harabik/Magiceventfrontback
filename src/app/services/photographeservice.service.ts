@@ -30,7 +30,7 @@ updatep(p:any){
 }
 
 //impotant khalil
-deletep(){
-  return this.http.delete('http://localhost:3000/photographes/remove')
+deletep(id:any){
+  return this.http.delete('http://localhost:3000/photographes/remove/'+id)
 }
 }

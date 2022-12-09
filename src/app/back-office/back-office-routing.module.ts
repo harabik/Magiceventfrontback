@@ -8,6 +8,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { EspacebackComponent } from './espaceback/espaceback.component';
 import { ServeurbackComponent } from './serveurback/serveurback.component';
+import { PhotographebackComponent } from './photographeback/photographeback.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
          { path: 'navbar',     component:NavBarComponent },
          { path: 'espaceback',     component:EspacebackComponent },
          { path: 'serveurback',     component:ServeurbackComponent },
+         { path: 'photographeback',     component:PhotographebackComponent },
 
 
 
