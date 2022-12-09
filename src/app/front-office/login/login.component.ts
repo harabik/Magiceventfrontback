@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormBuilder,Validator, Validators} from "@angular/forms";
-import { Router } from '@angular/router';
-import { constants } from 'buffer';
-import { threadId } from 'worker_threads';
+
+import {Component, OnInit} from '@angular/core';
+import { UserserviceService } from 'src/app/services/userservice.service';
 
 @Component({
   selector: 'app-login',
@@ -11,35 +10,39 @@ import { threadId } from 'worker_threads';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public password: string = "";
+  public email: string = "";
 
-  public loginForm!: FormGroup;
-  constructor(private formBuilder : FormBuilder , private http : HttpClient, private router:Router ){ }
-
+  constructor(private userService: UserserviceService) {
+  }
 
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      email:['',Validators.required],
-      pass:['',Validators.required],
-    })
+    if (localStorage.getItem("email") !== "Veuillez vous connecter" && localStorage.getItem("email")) {
+      this.userService.isConnect();
 
+    } else {
+      this.userService.isNoConnect();
+    }
+
+  }
+
+  login() {
+    this.userService.login$(this.email, this.password, "").subscribe(data => {
+      if (data.status === 200) {
+        console.log(data)
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("email", this.email);
+        this.userService.isConnect();
+      }
+
+    })
+  }
+
+  deconnexion() {
+    localStorage.setItem("token", "deconnecter")
+    localStorage.setItem("email", "Veuillez vous connecter");
+    this.userService.isNoConnect()
+
+  }
 
 }
-login(){
-  this.http.get<any>("http://localhost:3000/signupBusUsers")
-  this.http.get<any>("http://localhost:3000/signup")
-  .subscribe(res=>{
-    const user = res.find((a:any)=>{
-      return a.email === this.loginForm.value.email && a.pass === this.loginForm.value.pass});
-
-if
-(user){
-  alert("login Success");
-  this.loginForm.reset();
-  this.router.navigate(['dashboard'])
-}else{
-  alert("user not found");
-}},err=>{
-  alert("something wrong")
-})
-}}
-

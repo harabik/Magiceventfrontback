@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { createvent } from 'src/app/models/devis/createvent';
-import { CreationevenementService } from 'src/app/services/creationevenement.service';
+//import { CreationevenementService } from 'src/app/services/creationevenement.service';
 
 @Component({
   selector: 'app-eventcreate',
@@ -12,18 +12,20 @@ import { CreationevenementService } from 'src/app/services/creationevenement.ser
 export class EventcreateComponent implements OnInit {
   // createvent: createvent[];
   // product: Product=new Product();
-  
+
   createvent: createvent=new createvent();
 
   header :string;
   id: number;
-  
+
   // rForm: FormGroup;
   // post:any;                     // A property for our submitted form
   // description:string = '';
   // name:string = '';
   // titleAlert:string = 'This field is required';
-  constructor(private route: ActivatedRoute, private CreationevenementService:CreationevenementService) { 
+  constructor(private route: ActivatedRoute,
+              //private CreationevenementService:CreationevenementService
+               ) {
     // private fb: FormBuilder
     // this.rForm = fb.group({
     //   'name': [null, Validators.required],
@@ -54,9 +56,9 @@ export class EventcreateComponent implements OnInit {
     //)
   }
 
-  
 
-  
+
+
   // addPost(post) {
   //   this.description = post.description;
   //   this.name = post.name;
@@ -73,7 +75,7 @@ export class EventcreateComponent implements OnInit {
     // date_event : string;
     // id_user:string;
     // creates_at: number;
-  //  } 
+  //  }
   }
 
 }

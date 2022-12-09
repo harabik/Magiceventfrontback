@@ -1,35 +1,37 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { createvent } from '../models/devis/createvent';
+import {environment} from "../../environments/environment";
+
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CreationevenementService {
-  Createvent :createvent[]= [
 
-    {
-      id : 1,
-      name : "harabi",
-      phone : 23146176,
-      email : "harabikarim@gmail.com",
-      typeevent : "the seminar",
-      nbr_invit: 35,
-      date_event :"10/10/23",
-      id_user:"traiteur",
-      creates_at: 20
+export class EventService {
 
-    }
- 
-  ];
+  private url = environment.serverURL;
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+  }
 
-onGet(){
-  return this.Createvent;
-}
-onAdd(createvent: createvent){
-  this.Createvent.push(createvent);
-}
+  getAllEvent(): Observable<Event[]> {
+    return this.http.get<Event[]>(this.url + 'eventcreate');
+  }
 
+  postEvent( data : any){
+    return this.http.post<any>("http://localhost:3000/eventList/",data);
+  }
+  getEvent(){
+    return this.http.get<any>("http://localhost:3000/eventList/");
 
+  }
+  putEvent(data:any ,id : number){
+    return this.http.put<any>("http://localhost:3000/eventList/"+id,data);
+
+  }
+  deleteEvent(id:number){
+    return this.http.delete<any>("http://localhost:3000/eventList/"+id);
+
+  }
 }
