@@ -1,6 +1,6 @@
 
 .contact{
-    background-color: #222;
+    background-color: #040919;
 }
 
 
@@ -19,7 +19,7 @@
 .contact form .inputBox input,
 .contact form textarea{
     width: 100%;
-    background:#333;
+    background:rgb(131, 16, 54);
     border-radius: .5rem;
     padding:1rem;
     margin:.7rem 0;
@@ -33,7 +33,7 @@
     padding:.8rem 3rem;
     font-size: 1.7rem;
     border-radius: .5rem;
-    background: #666;
+    background:rgb(131, 16, 54);
     color:#fff;
     cursor: pointer;
     font-weight: 600;

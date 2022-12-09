@@ -7,7 +7,7 @@
 
 .gallery .box-container .box{
     position: relative;
-    border:1rem solid #333;
+    border:1rem solid #040919;
     border-radius: .5rem;
     height: 25rem;
     cursor: pointer;
@@ -28,7 +28,7 @@
 .gallery .box-container .box .title{
     position: absolute;
     top:-10rem; left:0; right: 0;
-    background:#333;
+    background:#040919;
     color:#fff;
     text-align: center;
     padding-bottom: 1rem;
@@ -42,7 +42,7 @@
 .gallery .box-container .box .icons{
     position: absolute;
     bottom:-10rem; left:0; right: 0;
-    background:#333;
+    background:#040919;
     padding-top: 1rem;
     text-align: center;
 }
@@ -61,5 +61,5 @@
     color:var(--main-color);
 }
 .gallery{
-    background-color: #222;
+    background-color: #040919;
 }
