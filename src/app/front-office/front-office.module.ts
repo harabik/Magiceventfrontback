@@ -56,6 +56,12 @@ import { ListphotographeComponent } from './ProfileUsers/listphotographe/listpho
 import {ListserveurComponent} from "./ProfileUsers/listserveur/listserveur.component";
 import {ListtraiteurComponent} from "./ProfileUsers/listtraiteur/listtraiteur.component";
 import { Home2Component } from './home2/home2.component';
+import { ReservationanimateurComponent } from './ProfileUsers/reservationanimateur/reservationanimateur.component';
+import { ReservationphotographeComponent } from './ProfileUsers/reservationphotographe/reservationphotographe.component';
+import { ReservationserveurComponent } from './ProfileUsers/reservationserveur/reservationserveur.component';
+import { ReservationtraiteurComponent } from './ProfileUsers/reservationtraiteur/reservationtraiteur.component';
+import {ReservationespaceComponent} from "./ProfileUsers/reservationespace/reservationespace.component";
+import {ReservationlocationComponent} from "./ProfileUsers/reservationlocation/reservationlocation.component";
 
 @NgModule({
     declarations: [
@@ -94,7 +100,13 @@ import { Home2Component } from './home2/home2.component';
         ListphotographeComponent,
       ListserveurComponent ,
       ListtraiteurComponent,
-      Home2Component
+      Home2Component,
+      ReservationanimateurComponent,
+      ReservationphotographeComponent,
+      ReservationserveurComponent,
+      ReservationtraiteurComponent,
+      ReservationespaceComponent,
+      ReservationlocationComponent
 
     ],
     imports: [

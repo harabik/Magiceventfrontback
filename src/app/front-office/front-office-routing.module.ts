@@ -33,6 +33,12 @@ import {ListlocationComponent} from "./ProfileUsers/listlocation/listlocation.co
 import {ListanimateurComponent} from "./ProfileUsers/listanimateur/listanimateur.component";
 import {ListespaceComponent} from "./ProfileUsers/listespace/listespace.component";
 import {Home2Component} from "./home2/home2.component";
+import {ReservationphotographeComponent} from "./ProfileUsers/reservationphotographe/reservationphotographe.component";
+import {ReservationlocationComponent} from "./ProfileUsers/reservationlocation/reservationlocation.component";
+import {ReservationanimateurComponent} from "./ProfileUsers/reservationanimateur/reservationanimateur.component";
+import {ReservationespaceComponent} from "./ProfileUsers/reservationespace/reservationespace.component";
+import {ReservationtraiteurComponent} from "./ProfileUsers/reservationtraiteur/reservationtraiteur.component";
+import {ReservationserveurComponent} from "./ProfileUsers/reservationserveur/reservationserveur.component";
 
 
 
@@ -80,6 +86,15 @@ const routes: Routes = [
       {path:'photographe' , component:ListphotographeComponent  },
       {path:'traiteur' , component:ListtraiteurComponent  },
       {path:'serveur' , component:ListserveurComponent },
+
+      // reservation
+      {path:'reservationespace/:id' , component:ReservationespaceComponent  },
+      {path:'reservationanimateur/:id' , component:ReservationanimateurComponent  },
+      {path:'reservationlocation/:id' , component:ReservationlocationComponent  },
+      {path:'reservationphotographe/:id' , component:ReservationphotographeComponent  },
+      {path:'reservationtraiteur/:id' , component:ReservationtraiteurComponent  },
+      {path:'reservationserveur/:id' , component:ReservationserveurComponent },
+
 
        ]}
       ];

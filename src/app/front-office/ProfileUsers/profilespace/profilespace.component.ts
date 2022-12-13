@@ -50,7 +50,7 @@ export class ProfilespaceComponent implements OnInit {
 
 
   reservation(id: number) {
-    this.router.navigate(['/espace', id]).then();
+    this.router.navigate(['/reservationespace', id]).then();
   }
 
 

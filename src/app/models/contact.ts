@@ -1,13 +1,14 @@
 
 
 export class contact{
-    
+
     name : String;
     email : String;
-    number : number;
+    number : String;
     subject : String;
-    your_message: String;
-    
+  message: String;
 
-    
+
+
+
 }
